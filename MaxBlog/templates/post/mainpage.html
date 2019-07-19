@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+{% load i18n %}
+    {% block thumb %}
+
+    {% for obj in object_list|slice:":2" %}
+        {% with obj as object %}
+            {% include 'post/includes/thumb_section.html' %}
+        {% endwith %}
+    {% empty %}
+        <h1>{% trans 'Nothing to show' %}</h1>
+    {% endfor %}
+    {% endblock %}
+
+
+
+    {% block content %}
+        {% for obj in object_list|slice:"2:20" %}
+        {% with obj as object %}
+            {% include 'post/includes/content_post.html' %}
+        {% endwith %}
+    {% empty %}
+        <h1>{% trans 'Nothing to show' %}</h1>
+    {% endfor %}
+    <!-- Pagination -->
+    <nav aria-label="...">
+      <ul class="pagination">
+
+        {% if page_obj.has_previous %}
+        <li >
+            <a class="page-link" href="?page=1"> {% trans 'First' %}</a>
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;{% trans 'Previos' %}</a>
+        </li>
+        {% endif %}
+        <li class="page-item active">
+            <span class="current">
+            Page {{ page_obj.number }} {% trans 'of' %} {{ page_obj.paginator.num_pages }}.
+        </span>
+        </li>
+       {% if page_obj.has_next %}
+        <li >
+          <a class="page-link" href="?page={{ page_obj.next_page_number }}">{% trans 'Next' %}&raquo;</a>
+          <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{% trans 'Last' %}</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+    <!-- /Pagination -->
+    {% endblock %}

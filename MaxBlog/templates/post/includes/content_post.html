@@ -1,0 +1,16 @@
+{% load i18n %}
+
+                    <!-- post -->
+					<div class="col-md-6">
+						<div class="post post">
+							<a class="post-img" href="{% url 'mainpage:detail' object.id %}"><img src="{{ object.image.url }}"</a>
+							<div class="post-body">
+								<div class="post-meta">
+									<a class="post-category cat-2" href="{{ object.category }}.html">{{ object.category }}</a>
+									<span class="post-date">{{ object.create_datetime}}</span>
+								</div>
+								<h3 class="post-title"><a href="{% url 'mainpage:detail' object.id %}">{{ object.title }}</a></h3>
+							</div>
+						</div>
+					</div>
+					<!-- /post -->

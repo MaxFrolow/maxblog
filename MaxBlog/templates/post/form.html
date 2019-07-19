@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load static %}
+{% block thumb %}
+{% endblock %}
+{% block content %}
+<div class="col-md-5 col-md-offset-1">
+
+						<div class="section-row">
+							<h3>{% trans 'Create Post' %}</h3>
+							<form method = "post" enctype="multipart/form-data">
+                            {% csrf_token %}
+								<div class="row">
+									<div class="col-md-7">
+										<div class="form-group">
+									<label id = "{{ from.id_for_label }}"><span>{% trans 'Title' %}</span></label>
+											{{ form.title }}
+										</div>
+									</div>
+									<div class="col-md-7">
+										<div class="form-group">
+											<span>{% trans 'Second title' %}</span>
+											{{ form.second_title }}
+										</div>
+									</div>
+									<div class="col-md-7">
+										<div class="form-group">
+											<span>{% trans 'Category' %}</span>
+											{{ form.category }}
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<span>{% trans 'Text' %}</span>
+											{{ form.text }}
+										</div>
+										<div class="col-md-7">
+										<div class="form-group">
+											<span>{% trans 'Title image' %}</span>
+											{{ form.image }}
+										</div>
+									</div>
+										<button class="primary-button" type="submit">
+											{% if btn_text %}
+												{{ btn_text }}
+											{% else %}
+												{% trans 'Button' %}
+											{% endif %}
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+{% endblock %}
