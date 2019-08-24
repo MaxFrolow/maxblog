@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d58a5f9c-6dcf-4cc4-8787-bd959d7e8755" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/MaxBlog/MaxBlog/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/MaxBlog/settings/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/likes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/likes/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/mainpage/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/mainpage/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/mainpage/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/mainpage/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/mainpage/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/mainpage/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/mainpage/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/mainpage/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/mainpage/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/mainpage/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/mainpage/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/mainpage/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/css/forms.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/css/responsive.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/img/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/img/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/SelectFilter2.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/SelectFilter2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/actions.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/actions.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/admin/DateTimeShortcuts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/admin/RelatedObjectLookups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/cancel.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/cancel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/collapse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/collapse.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/collapse.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/inlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/inlines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/inlines.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/inlines.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/prepopulate.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/prepopulate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/prepopulate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/prepopulate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/urlify.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/urlify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/vendor/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/vendor/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/static/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/static/admin/js/vendor/jquery/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/templates/post/blog-post.html" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/templates/post/blog-post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/templates/post/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/templates/post/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/templates/post/includes/comment_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/templates/post/includes/comment_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/templates/post/includes/content_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/templates/post/includes/content_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/templates/post/includes/thumb_section.html" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/templates/post/includes/thumb_section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaxBlog/templates/post/mainpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/MaxBlog/templates/post/mainpage.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vagrantfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-561" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MaxBlog/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/MaxBlog/requirements.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1672" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MaxBlogHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaxBlogHub" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MaxBlogHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MaxBlogHub" type="462c0819:PsiDirectoryNode" />
+              <item name="MaxBlog" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../maxblog" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d58a5f9c-6dcf-4cc4-8787-bd959d7e8755" name="Default Changelist" comment="" />
+      <created>1563567643339</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563567643339</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1672" y="-8" width="1296" height="1000" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3298731" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Vagrantfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MaxBlog/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

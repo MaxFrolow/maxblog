@@ -1,0 +1,17 @@
+
+
+
+<!-- comment -->
+<div class="media" data-list="comment">
+    <div class="media-left">
+        <img class="media-object" src="{{ comment.author.avatar.url }}" alt="">
+    </div>
+    <div class="media-body">
+        <div class="media-heading">
+            <h4>{{ comment.author }}</h4>
+            <span class="time">{{ comment.created_datetime }}</span>
+        </div>
+        <p>{{ comment.text }}</p>
+    </div>
+</div>
+<!-- /comment -->

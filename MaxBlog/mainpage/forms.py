@@ -12,8 +12,12 @@ class CreatePostForm(forms.ModelForm):
             'title': forms.TextInput(),
             'second_title': forms.TextInput(),
             'text': forms.Textarea(),
-            'category': forms.TextInput(),
-        }
+                    }
+        category = forms.MultipleChoiceField(
+            widget=forms.CheckboxSelectMultiple,
+            choices=Post.CATEGORY_CHOICES
+        )
+
         image = forms.ImageField(
             label=_('Title image'),
             widget=forms.FileInput(
@@ -27,7 +31,7 @@ class CreatePostForm(forms.ModelForm):
 
 
         def __init__(self, *args, **kwargs):
-            super(CreatePostFormForm, self).__init__(*args, **kwargs)
+            super(CreatePostForm, self).__init__(*args, **kwargs)
             self.fields['title'].widget.attrs.update({'class': 'input', name: 'title'})
             self.fields['second_title'].widget.attrs.update({'class': 'input', name: 'Second title'})
             self.fields['text'].widget.attrs.update({'class': 'input', name: 'Text'})
@@ -39,18 +43,16 @@ class CreateCommentForm(forms.ModelForm):
 
 
     text = forms.CharField(
-        label=_("Your comment"),
-        widget=forms.TextInput(
+        label='',
+        widget=forms.Textarea(
             attrs={
-                'class':'form-control input',
-                'placeholder':'Comment'
+                'class': 'input',
+                'placeholder': 'Message',
+                'name': 'message'
             }
-        ),
+        )
     )
-
-
-
 
     class Meta:
         model = Comment
-        fields = ('text',)
+        fields = ['text']

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'MaxBlog.apps.MaxBlogConfig',
     'mainpage.apps.MainpageConfig',
     'accounts.apps.AccountsConfig',
-    'likes.apps.LikesConfig'
+    'likes.apps.LikesConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,13 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'builtins': [
+                'mainpage.templatetags.category_tags',
+                'mainpage.templatetags.pagination',
+            ],
+
         },
+
     },
 ]
 

@@ -10,7 +10,7 @@ class User(AbstractBaseUser ,PermissionsMixin):
     first_name = models.CharField (_('first name'), max_length=25)
     last_name = models.CharField (_('last name'), max_length=25)
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
-    avatar = models.ImageField(_('avatar'), upload_to='avatars/', null=True, blank=True)
+    avatar = models.ImageField(_('avatar'), upload_to='avatars/', null=True, blank=True, default='static/index.png')
     is_staff = models.BooleanField(_('staff'), default=True)
     is_active = models.BooleanField(_('active'), default=True)
 

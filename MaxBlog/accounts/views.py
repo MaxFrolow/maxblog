@@ -27,6 +27,11 @@ class RegisterCreateView(AnonymousRequiredMixin, CreateView):
     form_class = CustomUserCreationForm
     template_name = "accounts/registration.html"
 
+    def __init__(self):
+        super().__init__()
+        self.avatar = "media/avatarts/index.html"
+
+
     def get_success_url(self):
         return reverse_lazy('accounts:login')
 

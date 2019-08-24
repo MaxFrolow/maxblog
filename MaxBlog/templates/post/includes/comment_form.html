@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load static %}
+		{% block header %}
+			<div id="post-header" class="page-header">
+				<div class="background-img" style="background-image: url('{% static "img/post-page.jpg" %}')"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10">
+							<div class="post-meta">
+								<a class="post-category cat-2" href="{{ object.category }}.html">{{ object.category }}</a>
+								<span class="post-date">{{ object.created_datetime }}</span>
+							</div>
+							<h1>{{ object.title }}</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endblock %}
+		{% block thumb %}
+		{% endblock %}
+		{% block content %}
+						<div class="section-row">
+							<div class="section-title">
+								<h2>Leave a reply</h2>
+							</div>
+
+							<form  class="post-reply" method="post" >
+								{% csrf_token %}
+								<div class="row">
+
+
+									<div class="col-md-12">
+										<div class="form-group">
+											{{ form.as_p }}
+										</div>
+									<!--<div class="form-group">
+											<textarea class="input" name="message" placeholder="Message"></textarea>
+										</div> -->
+										<button class="primary-button" type="submit" data-action="comment_create" ">Submit</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- /reply -->
+
+						<!-- /reply -->
+
+{% endblock %}

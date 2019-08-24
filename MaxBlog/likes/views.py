@@ -15,9 +15,9 @@ class LikeCreateView(LoginRequiredMixin, CreateView):
     def get(self, request, *args, **kwargs):
         query = {
             'content_type_id': self.kwargs['type'],
-            'objects_id': self.kwargs['id'],
+            'object_id': self.kwargs['id'],
         }
         like, is_created = self.model.objects.get_or_create(user_id=request.user.id, **query)
         if not is_created:
-            likes.delete()
+            like.delete()
         return JsonResponse({'status': 'ok', 'counter': self.get_counter(query)})

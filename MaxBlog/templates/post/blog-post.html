@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
 {% load i18n %}
 {% load static %}
+{% load category_tags %}
 		{% block header %}
 			<div id="post-header" class="page-header">
 				<div class="background-img" style="background-image: url('{% static "img/post-page.jpg" %}')"></div>
@@ -8,7 +9,7 @@
 					<div class="row">
 						<div class="col-md-10">
 							<div class="post-meta">
-								<a class="post-category cat-2" href="{{ object.category }}.html">{{ object.category }}</a>
+								<a class="post-category {% category_attrs object.category %}" href="?filter_category={{ object.category }}.html">{{ object.category }}</a>
 								<span class="post-date">{{ object.created_datetime }}</span>
 							</div>
 							<h1>{{ object.title }}</h1>
@@ -21,32 +22,18 @@
 		{% endblock %}
 
 		{% block content %}
-		<div class="col-md-12">
+		<div class="col-md-10">
 						<!-- ad -->
 
-						<div class="section-row sticky-container m-b-lg ">
-							<div class="main-post col-md-10">
+						<div class="section-row sticky-container">
+							<div class="main-post">
 								<div class="section-row text-center">
-
 								<img class="img-responsive" src="{{ object.image.url }}" alt="">
-						</div>
+								</div>
 
 								<h3>{{ object.second_title }}</h3>
-								<p>{{ object.text }}</p>
-							</div>
-							 <a href="{% url 'mainpage:update' object.id  %}">
-										<button class="primary-button" type="button">
-												{% trans 'Update' %}
-										</button>
-                                    </a>
-									 <a href="{% url 'mainpage:delete' object.id %}">
-										<button class="primary-button btn-danger " type="button">
-												{% trans 'Delete' %}
-										</button>
-                                    </a>
-							<br>
-
-							{% if user.is_authenticated %}
+								<p>{{ object.text }}<br>
+                                    {% if user.is_authenticated %}
 								<button
 									type="button"
 									data-action="like"
@@ -55,16 +42,33 @@
 									&hearts;<span id="counter">{% if object.likes.count > 0 %}
 									{{ object.likes.count }}{% endif %}</span>
 								</button>
-    						{% endif %}
-							<div class="post-shares sticky-shares">
-								<a href="#" class="share-facebook"><i class="fa fa-facebook"></i></a>
-								<a href="#" class="share-twitter"><i class="fa fa-twitter"></i></a>
-								<a href="#" class="share-google-plus"><i class="fa fa-google-plus"></i></a>
-								<a href="#" class="share-pinterest"><i class="fa fa-pinterest"></i></a>
-								<a href="#" class="share-linkedin"><i class="fa fa-linkedin"></i></a>
-								<a href="#"><i class="fa fa-envelope"></i></a>
+    						    {% endif %}
+
+                                </p>
+
 							</div>
+                            {% if user == object.author %}
+                             <a href="{% url 'mainpage:update' object.id  %}">
+                                <button class="primary-button" type="button">
+                                        {% trans 'Update' %}
+                                </button>
+                            </a>
+                            <a href="{% url 'mainpage:delete' object.id %}">
+                                <button class="primary-button btn-danger " type="button">
+                                        {% trans 'Delete' %}
+                                </button>
+                            </a>
+                            {% endif %}
+
+
+
 						</div>
+                        <div class="section-row text-center">
+                            <a href="#" style="display: inline-block;margin: auto;">
+                                <img class="img-responsive" src="./img/ad-2.jpg" alt="">
+                            </a>
+                        </div>
+
 
 
 
@@ -91,100 +95,88 @@
 							</div>
 						</div>
 						<!-- /author -->
+
+						<!-- comment -->
 						<div class="section-row">
-							<div class="section-title">
-								<h2>3 Comments</h2>
-							</div>
+
 
 							<div class="post-comments">
-								<!-- comment -->
-								<div class="media">
-									<div class="media-left">
-										<img class="media-object" src="./img/avatar.png" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-heading">
-											<h4>John Doe</h4>
-											<span class="time">March 27, 2018 at 8:00 am</span>
-											<a href="#" class="reply">Reply</a>
-										</div>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-										<!-- comment -->
-										<div class="media">
-											<div class="media-left">
-												<img class="media-object" src="./img/avatar.png" alt="">
-											</div>
-											<div class="media-body">
-												<div class="media-heading">
-													<h4>John Doe</h4>
-													<span class="time">March 27, 2018 at 8:00 am</span>
-													<a href="#" class="reply">Reply</a>
-												</div>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-											</div>
-										</div>
-										<!-- /comment -->
-									</div>
-								</div>
-								<!-- /comment -->
-
-								<!-- comment -->
-								<div class="media">
-									<div class="media-left">
-										<img class="media-object" src="./img/avatar.png" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-heading">
-											<h4>John Doe</h4>
-											<span class="time">March 27, 2018 at 8:00 am</span>
-											<a href="#" class="reply">Reply</a>
-										</div>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-									</div>
-								</div>
-								<!-- /comment -->
+								{% for comment in object.comment_set.all %}
+								{% include 'post/includes/comment.html' %}
+								{% endfor %}
 							</div>
 						</div>
 						<!-- /comments -->
 
-						<!-- reply -->
 						<div class="section-row">
+							{% if user.is_authenticated %}
 							<div class="section-title">
 								<h2>Leave a reply</h2>
-								<p>your email address will not be published. required fields are marked *</p>
 							</div>
-							<form class="post-reply">
+
+							<form method="post" action="{% url 'mainpage:comment_create' object.id %}" class="post-reply">
 								<div class="row">
-									<div class="col-md-4">
-										<div class="form-group">
-											<span>Name *</span>
-											<input class="input" type="text" name="name">
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<span>Email *</span>
-											<input class="input" type="email" name="email">
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="form-group">
-											<span>Website</span>
-											<input class="input" type="text" name="website">
-										</div>
-									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<textarea class="input" name="message" placeholder="Message"></textarea>
+											{{ form.as_p }}
+											{% csrf_token %}
+								 			{% if object.comment_set.all %}
+												<button  class="primary-button" type="button" data-action="comment_create" >
+													{% trans 'Leave a Reply' %}
+												</button>
+											{% else %}
+												<a href="{{ request.get_full.path }}"><button  class="primary-button" type="button" data-action="comment_create" >
+													{% trans 'Leave a Reply' %}
+												</button></a>
+											{% endif %}
 										</div>
-										<button class="primary-button">Submit</button>
 									</div>
 								</div>
 							</form>
-						</div>
-						<!-- /reply -->
 
-					</div>
-					<!-- /Post content -->
+							{% else %}
+							<a href="{% url 'accounts:login' %}"><button  class="primary-button" type="button" >
+								{% trans 'Leave a Reply' %}
+							</button></a>
+
+							{% endif %}
+						</div>
+        </div>
+
+
 		{% endblock %}
+{% block extra_js %}
+    <script src="{% static 'js/post_detail.js' %}"></script>
+    <script>
+
+      $('body').on( 'click', '[data-action="edit_comment"]', function() {
+        const url = $( this ).data( 'url' );
+        let self = $( this );
+        $.get( url, function( e ) {
+          self.closest('[data-list="comment"]').replaceWith(e)
+        } );
+      } );
+      $('body').on( 'click', '[data-id="close_edit"]', function() {
+        const url = $( this ).data( 'url' );
+        let self = $( this );
+        $.get( url, function( e ) {
+          self.closest('[data-list="comment"]').replaceWith(e)
+        } );
+      } );
+      $('body').on('click', '[data-id="save_comment"]', function () {
+        const self = $(this),
+                form = self.closest('form');
+        let data = {
+          'text': form.find('textarea[name="text"]').val(),
+          'csrfmiddlewaretoken': form.find('input[name="csrfmiddlewaretoken"]').val()
+        };
+        $.post(self.data('url'), data, function( e ) {
+          if (e.status === 'ok'){
+            self.closest('[data-list="comment"]').replaceWith(e.text)
+          } else {
+            form.replaceWith(e.form)
+          }
+        })
+      })
+    </script>
+{% endblock %}

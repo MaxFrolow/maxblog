@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load static %}
+{% load category_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,10 +59,10 @@
 						<!-- nav -->
 						<ul class="nav-menu nav navbar-nav">
 							<li><a href="{% url 'mainpage:list' %}">{% trans "News" %}</a></li>
-							<li class="cat-1"><a href="category.html">Web Design</a></li>
-							<li class="cat-2"><a href="category.html">JavaScript</a></li>
-							<li class="cat-3"><a href="category.html">Css</a></li>
-							<li class="cat-4"><a href="category.html">Jquery</a></li>
+							<li class="cat-1"><a href="{% url 'mainpage:list' %}?filter_category=Web+Design">Web Design</a></li>
+							<li class="cat-2"><a href="{% url 'mainpage:list' %}?filter_category=JavaScript">JavaScript</a></li>
+							<li class="cat-3"><a href="{% url 'mainpage:list' %}?filter_category=CSS">Css</a></li>
+							<li class="cat-4"><a href="{% url 'mainpage:list' %}?filter_category=Jquery">Jquery</a></li>
 						</ul>
 						<!-- /nav -->
 
@@ -74,12 +75,21 @@
 							{% else %}
 								<a  href="{% url 'accounts:login' %}"><i class="fa"><h4>Log In</h4></i></a>
 							{% endif %}
+							<!--default search button
 							<button class="search-btn"><i class="fa fa-search"></i></button>
-							<div class="search-form">
+							<form class="search-form">
+
 								<input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
 								<button class="search-close"><i class="fa fa-times"></i></button>
-							</div>
-
+							</form>
+							-->
+							<button class="search-btn"><i class="fa fa-search"></i></button>
+							<form class="search-form">
+								<form>
+								{{ filter.form.filter_title }}
+								<button class="search-close"><i class="fa fa-times"></i></button>
+								</form>
+							</form>
 						</div>
 					<!--	/search & aside toggle -->
 
@@ -103,7 +113,7 @@
 						<ul class="nav-aside-menu">
 							<li><a href="{% url 'accounts:update' user.id %}">{% trans 'Change Profile' %}</a></li>
 							<li><a href="{% url 'mainpage:create' %}">{% trans 'Create Post' %}</a></li>
-							<li><a href="#">{% trans 'Your Posts' %}</a></li>
+							<li><a href="{% url 'mainpage:my_posts' %}">{% trans 'My Posts' %}</a></li>
 							<li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
 						</ul>
 					</div>
@@ -122,6 +132,7 @@
 
 			{% block header %}
 			{% endblock %}
+
 		</header>
 		<!-- /Header -->
 
@@ -280,36 +291,17 @@
 						<!-- post widget -->
 						<div class="aside-widget">
 							<div class="section-title">
-								<h2>Most Read</h2>
+								<h2>Favorite</h2>
 							</div>
+							{% for obj in favorite %}
+								{% with obj as object %}
+									{% include 'post/includes/favorite.html' %}
+								{% endwith %}
+							{% endfor %}
 
-							<div class="post post-widget">
-								<a class="post-img" href="blog-post.html"><img src="./img/widget-1.jpg" alt=""></a>
-								<div class="post-body">
-									<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-								</div>
-							</div>
 
-							<div class="post post-widget">
-								<a class="post-img" href="blog-post.html"><img src="./img/widget-2.jpg" alt=""></a>
-								<div class="post-body">
-									<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-								</div>
-							</div>
 
-							<div class="post post-widget">
-								<a class="post-img" href="blog-post.html"><img src="./img/widget-3.jpg" alt=""></a>
-								<div class="post-body">
-									<h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-								</div>
-							</div>
 
-							<div class="post post-widget">
-								<a class="post-img" href="blog-post.html"><img src="./img/widget-4.jpg" alt=""></a>
-								<div class="post-body">
-									<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-								</div>
-							</div>
 						</div>
 						<!-- /post widget -->
 
@@ -320,56 +312,27 @@
 							</div>
 							<div class="category-widget">
 								<ul>
-									<li><a href="#" class="cat-1">Web Design<span>340</span></a></li>
-									<li><a href="#" class="cat-2">JavaScript<span>74</span></a></li>
-									<li><a href="#" class="cat-4">JQuery<span>41</span></a></li>
-									<li><a href="#" class="cat-3">CSS<span>35</span></a></li>
+									<li><a href="{% url 'mainpage:list' %}?filter_category=Web+Design" class="cat-1">Web Design<span>{{ wd_count }}</span></a></li>
+									<li><a href="{% url 'mainpage:list' %}?filter_category=JavaScript" class="cat-2">JavaScript<span>{{ js_count }}</span></a></li>
+									<li><a href="{% url 'mainpage:list' %}?filter_category=Jquery" class="cat-3">JQuery<span>{{ jq_count }}</span></a></li>
+									<li><a href="{% url 'mainpage:list' %}?filter_category=CSS" class="cat-4">CSS<span>{{ css_count }}</span></a></li>
 								</ul>
 							</div>
 						</div>
 						<!-- /catagories -->
 						<!-- tags -->
-						<div class="aside-widget">
-							<div class="tags-widget">
-								<ul>
-									<li><a href="#">Chrome</a></li>
-									<li><a href="#">CSS</a></li>
-									<li><a href="#">Tutorial</a></li>
-									<li><a href="#">Backend</a></li>
-									<li><a href="#">JQuery</a></li>
-									<li><a href="#">Design</a></li>
-									<li><a href="#">Development</a></li>
-									<li><a href="#">JavaScript</a></li>
-									<li><a href="#">Website</a></li>
-								</ul>
-							</div>
-						</div>
+
 						<!-- /tags -->
 						<div class="aside-widget">
 							<div class="section-title">
 								<h2>Featured Posts</h2>
 							</div>
-							<div class="post post-thumb">
-								<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-meta">
-										<a class="post-category cat-3" href="category.html">Jquery</a>
-										<span class="post-date">March 27, 2018</span>
-									</div>
-									<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-								</div>
-							</div>
 
-							<div class="post post-thumb">
-								<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-meta">
-										<a class="post-category cat-2" href="category.html">JavaScript</a>
-										<span class="post-date">March 27, 2018</span>
-									</div>
-									<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-								</div>
-							</div>
+							{% for obj in newest %}
+								{% with obj as object %}
+									{% include 'post/includes/featered.html' %}
+								{% endwith %}
+							{% endfor %}
 						</div>
 					{% endblock %}
 
@@ -435,6 +398,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										<li><a href="category.html">JavaScript</a></li>
 										<li><a href="category.html">Css</a></li>
 										<li><a href="category.html">Jquery</a></li>
+
 									</ul>
 								</div>
 							</div>
@@ -446,10 +410,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						<div class="footer-widget">
 							<h3 class="footer-title">Join our Newsletter</h3>
 							<div class="footer-newsletter">
-								<form>
-									<input class="input" type="email" name="newsletter" placeholder="Enter your email">
-									<button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
-								</form>
+
 							</div>
 							<ul class="footer-social">
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -473,6 +434,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		<script src="{% static 'js/jquery.min.js' %}"></script>
 		<script src="{% static 'js/bootstrap.min.js' %}"></script>
 		<script src="{% static 'js/main.js' %}"></script>
+		<script src="{% static 'js/post_detail.js' %}"></script>
 
 	</body>
 </html>

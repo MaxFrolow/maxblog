@@ -1,0 +1,6 @@
+        <div class="post post-widget">
+            <a class="post-img" href="{% url 'mainpage:detail' object.id %}"><img src="{{ object.image.url }}" alt=""></a>
+            <div class="post-body">
+                <h3 class="post-title"><a href="{% url 'mainpage:detail' object.id %}">{{ object.title }}</a></h3>
+            </div>
+        </div>

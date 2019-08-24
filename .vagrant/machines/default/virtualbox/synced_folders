@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/maxblog/MaxBlog":{"group":"maxblog","ownner":"maxblog","guestpath":"/home/maxblog/MaxBlog","hostpath":"D:/MainAcad/MaxBlogHub/MaxBlog","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/MainAcad/MaxBlogHub","disabled":false,"__vagrantfile":true}}}

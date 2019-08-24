@@ -13,10 +13,16 @@ class PostAbstractModel(models.Model):
 
 
 class Post(PostAbstractModel):
-    title = models.CharField(_("Title"), max_length=50)
+    CATEGORY_CHOICES =  (
+        ('Web Design', 'Web Design'),
+        ('JavaScript','JavaScript'),
+        ('CSS', 'CSS'),
+        ('Jquery', 'Jquery'),
+    )
+    title = models.CharField(_("Title"), max_length=200)
     second_title = models.CharField(_("Second Title"), max_length=200)
     text = models.TextField(_("News text"))
-    category = models.CharField(_("Category"), max_length=20)
+    category = models.CharField(_("Category"), max_length=100, choices=CATEGORY_CHOICES)
     image = models.ImageField(_("News image"), upload_to='news_images/', null=True, blank=False)
     likes = GenericRelation('likes.Like', related_name='post_likes')
 
@@ -38,6 +44,6 @@ class Comment(PostAbstractModel):
         return "Comment from {0} to post {1}".format(self.author.id, self.post.id)
 
     class Meta:
-        ordering = ('-created_datetime',)
+        ordering = ('created_datetime',)
         verbose_name = _("Comment")
         verbose_name_plural = _("Comments")
