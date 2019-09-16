@@ -33,7 +33,7 @@
             {% endif %}
             <li class="page-item active">
                 <span class="current">
-                Page {{ page_obj.number }} {% trans 'of' %} {{ page_obj.paginator.num_pages }}.
+                {% trans 'Page' %} {{ page_obj.number }} {% trans 'of' %} {{ page_obj.paginator.num_pages }}.
             </span>
             </li>
            {% if page_obj.has_next %}

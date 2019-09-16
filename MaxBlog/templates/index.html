@@ -4,437 +4,430 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-		<title>WebMag HTML Template</title>
+    <title>WebMag HTML Template</title>
 
-		<!-- Google font -->
-		<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet"> 
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
 
-		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
-		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 
-		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="{% static 'js/html5shiv.min.js' %}"></script>
-		  <script src="{% static 'js/respond.min.js' %}"></script>
-		<![endif]-->
-	<style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/html5shiv.min.js' %}"></script>
+    <script src="{% static 'js/respond.min.js' %}"></script>
+    <![endif]-->
+    <style>
     .mx-auto{
         margin-left: 15% !important;
         margin-right: 30% !important;
         margin-bottom: 10% !important;
     }
+    .mx-bottom{
+    	margin-bottom: 20% !important;
+    }
 	.login-name{
 		margin-bottom: -20%;
 	}
-</style>
-    </head>
-	<body>
-
-		<!-- Header -->
-		<header id="header">
-			<!-- Nav -->
-			<div id="nav">
-				<!-- Main Nav -->
-				<div id="nav-fixed">
-					<div class="container">
-						<!-- logo -->
-						<div class="nav-logo">
-							<a href="{% url 'mainpage:list' %}" class="logo"><img src="{% static '/img/logo.png' %}" alt=""></a>
-						</div>
-						<!-- /logo -->
-
-						<!-- nav -->
-						<ul class="nav-menu nav navbar-nav">
-							<li><a href="{% url 'mainpage:list' %}">{% trans "News" %}</a></li>
-							<li class="cat-1"><a href="{% url 'mainpage:list' %}?filter_category=Web+Design">Web Design</a></li>
-							<li class="cat-2"><a href="{% url 'mainpage:list' %}?filter_category=JavaScript">JavaScript</a></li>
-							<li class="cat-3"><a href="{% url 'mainpage:list' %}?filter_category=CSS">Css</a></li>
-							<li class="cat-4"><a href="{% url 'mainpage:list' %}?filter_category=Jquery">Jquery</a></li>
-						</ul>
-						<!-- /nav -->
+	.lang-button {
+		  padding: 0;
+		  border: none;
+		  font: inherit;
+		  color: inherit;
+		  background-color: transparent;
+	}
 
 
+    </style>
+</head>
+<body>
 
-						<!-- search & aside toggle -->
-						<div class="nav-btns">
-							{% if user.is_authenticated %}
-								<button class="aside-btn login-name"><i class="fa"><h4>{{ user.get_full_name }}</h4></i></button>
-							{% else %}
-								<a  href="{% url 'accounts:login' %}"><i class="fa"><h4>Log In</h4></i></a>
-							{% endif %}
-							<!--default search button
-							<button class="search-btn"><i class="fa fa-search"></i></button>
-							<form class="search-form">
+<!-- Header -->
+<header id="header mx-bottom">
+    <!-- Nav -->
+    <div id="nav">
+        <!-- Main Nav -->
+        <div id="nav-fixed">
+            <div class="container">
+                <!-- logo -->
+                <div class="nav-logo">
+                    <a href="{% url 'mainpage:list' %}" class="logo"><img src="{% static '/img/logo.png' %}" alt=""></a>
+                </div>
+                <!-- /logo -->
 
-								<input class="search-input" type="text" name="search" placeholder="Enter Your Search ...">
-								<button class="search-close"><i class="fa fa-times"></i></button>
-							</form>
-							-->
-							<button class="search-btn"><i class="fa fa-search"></i></button>
-							<form class="search-form">
-								<form>
-								{{ filter.form.filter_title }}
-								<button class="search-close"><i class="fa fa-times"></i></button>
-								</form>
-							</form>
-						</div>
-					<!--	/search & aside toggle -->
+                <!-- nav -->
+                <ul class="nav-menu nav navbar-nav">
+                    <li><a href="{% url 'mainpage:list' %}">{% trans "News" %}</a></li>
+                    <li class="cat-1"><a href="{% url 'mainpage:list' %}?filter_category=Web+Design">Web Design</a></li>
+                    <li class="cat-2"><a href="{% url 'mainpage:list' %}?filter_category=JavaScript">JavaScript</a></li>
+                    <li class="cat-3"><a href="{% url 'mainpage:list' %}?filter_category=CSS">Css</a></li>
+                    <li class="cat-4"><a href="{% url 'mainpage:list' %}?filter_category=Jquery">Jquery</a></li>
+                    <li class="cat-4"></li>
+                </ul>
+                <!-- /nav -->
 
-					</div>
 
-				</div>
-				<!-- /Main Nav -->
+                <!-- search & aside toggle -->
 
-				<!-- Aside Nav -->
-				{% if user.is_authenticated %}
-				<div id="nav-aside">
-					<!-- nav -->
-					<div class="section-row">
-						<i class="fa"><h3>{{ user.get_full_name }}</h3></i>
-						<div class="mx-auto">
-						{% if user.avatar %}
-                            <img src="{{ user.avatar.url }}" style="width: 200px">
+                <!-- lenguage buttons -->
+                <div class="nav-btns">
+                    <form action="{% url 'set_language' %}" method="post">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+
+                        {% for lang in languages %}
+                        {% if lang.code == LANGUAGE_CODE %}
+                        {% else %}
+                        <input name="language" type="hidden" value="{{lang.code}}">
+                        <button class="lang-button" type="submit"><i class="fa"><h4>{{lang.code.upper}}</h4></i>
+                        </button>
                         {% endif %}
-						</div>
+                        {% endfor %}
 
-						<ul class="nav-aside-menu">
-							<li><a href="{% url 'accounts:update' user.id %}">{% trans 'Change Profile' %}</a></li>
-							<li><a href="{% url 'mainpage:create' %}">{% trans 'Create Post' %}</a></li>
-							<li><a href="{% url 'mainpage:my_posts' %}">{% trans 'My Posts' %}</a></li>
-							<li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
-						</ul>
-					</div>
+                    </form>
+                </div>
+                <!-- /lenguages buttons -->
+                <div class="nav-btns">
 
 
-					<!-- aside nav close -->
-					<button class="nav-aside-close"><i class="fa fa-times"></i></button>
-					<!-- /aside nav close -->
-				</div>
-				{% endif %}
-				<!-- Aside Nav -->
-			</div>
-			<!-- /Nav -->
+                    <!-- Log in button -->
+                    {% if user.is_authenticated %}
+                    <button class="aside-btn login-name"><i class="fa"><h4>{{ user.get_full_name }}</h4></i></button>
+                    {% else %}
+                    <a href="{% url 'accounts:login' %}"><i class="fa"><h4>{% trans 'Log In' %}</h4></i></a>
+                    {% endif %}
+                    <!-- /Log In button -->
+
+                    <!-- Search button -->
+                    <button class="search-btn"><i class="fa fa-search"></i></button>
+                    <form class="search-form">
+                        <form>
+                            {{ filter.form.filter_title }}
+                            <button class="search-close"><i class="fa fa-times"></i></button>
+                        </form>
+                    </form>
+                    <!-- /search button -->
+                </div>
+                <!--	/search & aside toggle -->
+
+            </div>
+
+        </div>
+        <!-- /Main Nav -->
+
+        <!-- Aside Nav -->
+        {% if user.is_authenticated %}
+        <div id="nav-aside">
+            <!-- nav -->
+            <div class="section-row">
+
+                <i class="fa"><h3>{{ user.get_full_name }}</h3></i>
+                <div class="mx-auto">
+                    {% if user.avatar %}
+                    <img src="{{ user.avatar.url }}" style="width: 200px">
+                    {% endif %}
+                </div>
+
+                <ul class="nav-aside-menu">
+                    <li><a href="{% url 'accounts:update' user.id %}">{% trans 'Change Profile' %}</a></li>
+                    <li><a href="{% url 'mainpage:create' %}">{% trans 'Create Post' %}</a></li>
+                    <li><a href="{% url 'mainpage:my_posts' %}">{% trans 'My Posts' %}</a></li>
+                    <li><a href="{% url 'accounts:logout' %}">{% trans 'Logout' %}</a></li>
+                </ul>
 
 
+                <!-- aside nav close -->
+                <button class="nav-aside-close"><i class="fa fa-times"></i></button>
+                <!-- /aside nav close -->
+            </div>
+            {% endif %}
+            <!-- Aside Nav -->
 
-			{% block header %}
-			{% endblock %}
-
-		</header>
-		<!-- /Header -->
-
-		<!-- section -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				{% block thumb %}
-				<div class="row">
-					<!-- post -->
-					<div class="col-md-6">
-						<div class="post post-thumb">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-6">
-						<div class="post post-thumb">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">Jquery</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-				</div>
-				{% endblock %}
-				<!-- /row -->
-				<!-- row -->
+        </div>
+        <!-- /Nav -->
 
 
+        {% block header %}
+        {% endblock %}
+	</div>
+</header>
+<!-- /Header -->
 
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-8">
-						<div class="row">
-							<!-- post -->
-							{% block content %}
+<!-- section -->
+<div class="section">
 
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-4" href="category.html">Css</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">CSS Float: A Tutorial</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        {% block thumb %}
+        <div class="row">
+            <!-- post -->
+            <div class="col-md-6">
+                <div class="post post-thumb">
+                    <a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
+                    <div class="post-body">
+                        <div class="post-meta">
+                            <a class="post-category cat-2" href="category.html">JavaScript</a>
+                            <span class="post-date">March 27, 2018</span>
+                        </div>
+                        <h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against
+                            JavaScript-Based CPU Side-Channel Attacks</a></h3>
+                    </div>
+                </div>
+            </div>
+            <!-- /post -->
 
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-1" href="category.html">Web Design</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<div class="clearfix visible-md visible-lg"></div>
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-3" href="category.html">Jquery</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<div class="clearfix visible-md visible-lg"></div>
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-1" href="category.html">Web Design</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-							{% endblock %}
+            <!-- post -->
+            <div class="col-md-6">
+                <div class="post post-thumb">
+                    <a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
+                    <div class="post-body">
+                        <div class="post-meta">
+                            <a class="post-category cat-3" href="category.html">Jquery</a>
+                            <span class="post-date">March 27, 2018</span>
+                        </div>
+                        <h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
+                    </div>
+                </div>
+            </div>
+            <!-- /post -->
+        </div>
+        {% endblock %}
+        <!-- /row -->
+        <!-- row -->
 
 
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <!-- post -->
+                    {% block content %}
 
-						</div>
-					</div>
+                    <!-- post -->
+                    <div class="col-md-6">
+                        <div class="post">
+                            <a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-meta">
+                                    <a class="post-category cat-4" href="category.html">Css</a>
+                                    <span class="post-date">March 27, 2018</span>
+                                </div>
+                                <h3 class="post-title"><a href="blog-post.html">CSS Float: A Tutorial</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /post -->
 
-					{% block aside %}
-					<div class="col-md-4 margin-right">
-						<!-- post widget -->
-						<div class="aside-widget">
-							<div class="section-title">
-								<h2>Favorite</h2>
-							</div>
-							{% for obj in favorite %}
-								{% with obj as object %}
-									{% include 'post/includes/favorite.html' %}
-								{% endwith %}
-							{% endfor %}
+                    <!-- post -->
+                    <div class="col-md-6">
+                        <div class="post">
+                            <a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-meta">
+                                    <a class="post-category cat-1" href="category.html">Web Design</a>
+                                    <span class="post-date">March 27, 2018</span>
+                                </div>
+                                <h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And
+                                    Development Tools</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /post -->
 
+                    <div class="clearfix visible-md visible-lg"></div>
 
+                    <!-- post -->
+                    <div class="col-md-6">
+                        <div class="post">
+                            <a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-meta">
+                                    <a class="post-category cat-2" href="category.html">JavaScript</a>
+                                    <span class="post-date">March 27, 2018</span>
+                                </div>
+                                <h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against
+                                    JavaScript-Based CPU Side-Channel Attacks</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /post -->
 
+                    <!-- post -->
+                    <div class="col-md-6">
+                        <div class="post">
+                            <a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-meta">
+                                    <a class="post-category cat-3" href="category.html">Jquery</a>
+                                    <span class="post-date">March 27, 2018</span>
+                                </div>
+                                <h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use
+                                    JQuery?</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /post -->
 
-						</div>
-						<!-- /post widget -->
+                    <div class="clearfix visible-md visible-lg"></div>
 
-						<!-- catagories -->
-						<div class="aside-widget">
-							<div class="section-title">
-								<h2>Catagories</h2>
-							</div>
-							<div class="category-widget">
-								<ul>
-									<li><a href="{% url 'mainpage:list' %}?filter_category=Web+Design" class="cat-1">Web Design<span>{{ wd_count }}</span></a></li>
-									<li><a href="{% url 'mainpage:list' %}?filter_category=JavaScript" class="cat-2">JavaScript<span>{{ js_count }}</span></a></li>
-									<li><a href="{% url 'mainpage:list' %}?filter_category=Jquery" class="cat-3">JQuery<span>{{ jq_count }}</span></a></li>
-									<li><a href="{% url 'mainpage:list' %}?filter_category=CSS" class="cat-4">CSS<span>{{ css_count }}</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<!-- /catagories -->
-						<!-- tags -->
+                    <!-- post -->
+                    <div class="col-md-6">
+                        <div class="post">
+                            <a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-meta">
+                                    <a class="post-category cat-1" href="category.html">Web Design</a>
+                                    <span class="post-date">March 27, 2018</span>
+                                </div>
+                                <h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website
+                                    Design Mockup Into Code Automatically</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /post -->
 
-						<!-- /tags -->
-						<div class="aside-widget">
-							<div class="section-title">
-								<h2>Featured Posts</h2>
-							</div>
-
-							{% for obj in newest %}
-								{% with obj as object %}
-									{% include 'post/includes/featered.html' %}
-								{% endwith %}
-							{% endfor %}
-						</div>
-					{% endblock %}
-
-
-
-
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /section -->
-
-		{% block elsecontent %}
-		{% endblock %}
-
-
-
-
-
-
-		<!-- Footer -->
-		<footer id="footer">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-5">
-						<div class="footer-widget">
-							<div class="footer-logo">
-								<a href="index.html" class="logo"><img src="{% static 'img/logo.png' %}" alt=""></a>
-							</div>
-							<ul class="footer-nav">
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Advertisement</a></li>
-							</ul>
-							<div class="footer-copyright">
-								<span>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="footer-widget">
-									<h3 class="footer-title">About Us</h3>
-									<ul class="footer-links">
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="#">Join Us</a></li>
-										<li><a href="contact.html">Contacts</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="footer-widget">
-									<h3 class="footer-title">Catagories</h3>
-									<ul class="footer-links">
-										<li><a href="category.html">Web Design</a></li>
-										<li><a href="category.html">JavaScript</a></li>
-										<li><a href="category.html">Css</a></li>
-										<li><a href="category.html">Jquery</a></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
+                    <!-- post -->
+                    <div class="col-md-6">
+                        <div class="post">
+                            <a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-meta">
+                                    <a class="post-category cat-2" href="category.html">JavaScript</a>
+                                    <span class="post-date">March 27, 2018</span>
+                                </div>
+                                <h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against
+                                    JavaScript-Based CPU Side-Channel Attacks</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /post -->
+                    {% endblock %}
 
 
-					<div class="col-md-3">
-						<div class="footer-widget">
-							<h3 class="footer-title">Join our Newsletter</h3>
-							<div class="footer-newsletter">
+                </div>
+            </div>
 
-							</div>
-							<ul class="footer-social">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</footer>
-		<!-- /Footer -->
+            {% block aside %}
+            <div class="col-md-4 margin-right">
+                <!-- post widget -->
+                <div class="aside-widget">
+                    <div class="section-title">
+                        <h2>{% trans 'Favorites' %}</h2>
+                    </div>
+                    {% for obj in favorite %}
+                    {% with obj as object %}
+                    {% include 'post/includes/favorite.html' %}
+                    {% endwith %}
+                    {% endfor %}
 
 
+                </div>
+                <!-- /post widget -->
 
-		<!-- jQuery Plugins -->
-		<script src="{% static 'js/jquery.min.js' %}"></script>
-		<script src="{% static 'js/bootstrap.min.js' %}"></script>
-		<script src="{% static 'js/main.js' %}"></script>
-		<script src="{% static 'js/post_detail.js' %}"></script>
+                <!-- categories -->
+                <div class="aside-widget">
+                    <div class="section-title">
+                        <h2>{% trans 'Categories' %}</h2>
+                    </div>
+                    <div class="category-widget">
+                        <ul>
+                            <li><a href="{% url 'mainpage:list' %}?filter_category=Web+Design" class="cat-1">Web
+                                Design<span>{{ wd_count }}</span></a></li>
+                            <li><a href="{% url 'mainpage:list' %}?filter_category=JavaScript"
+                                   class="cat-2">JavaScript<span>{{ js_count }}</span></a></li>
+                            <li><a href="{% url 'mainpage:list' %}?filter_category=Jquery" class="cat-3">JQuery<span>{{ jq_count }}</span></a>
+                            </li>
+                            <li><a href="{% url 'mainpage:list' %}?filter_category=CSS" class="cat-4">CSS<span>{{ css_count }}</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /catagories -->
+                <!-- tags -->
 
-	</body>
+                <!-- /tags -->
+                <div class="aside-widget">
+                    <div class="section-title">
+                        <h2>{% trans 'Newest' %}</h2>
+                    </div>
+
+                    {% for obj in newest %}
+                    {% with obj as object %}
+                    {% include 'post/includes/newest.html' %}
+                    {% endwith %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endblock %}
+
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /section -->
+
+{% block elsecontent %}
+{% endblock %}
+
+
+<!-- Footer -->
+<footer id="footer">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-5">
+                <div class="footer-widget">
+                    <div class="footer-logo">
+                        <a href="index.html" class="logo"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                    </div>
+
+                    <div class="footer-copyright">
+								<span>&copy;
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+                                            class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                            href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</footer>
+<!-- /Footer -->
+
+
+<!-- jQuery Plugins -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/post_detail.js' %}"></script>
+
+
+</body>
 </html>

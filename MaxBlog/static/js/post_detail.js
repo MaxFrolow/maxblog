@@ -16,7 +16,7 @@ $('[data-action="like"]').on('click', function() {
 $('[data-action="comment_create"]').on('click', function() {
   var $btn = $(this),
     $form = $($btn.closest('form'));
-  $.mainpage($form.attr('action'),
+  $.post($form.attr('action'),
     {
       'csrfmiddlewaretoken': $form.find('input[name="csrfmiddlewaretoken"]').val(),
       'text': $form.find('textarea[name="text"]').val()

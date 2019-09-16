@@ -39,7 +39,11 @@
 <div class="container">
     <div class="col-sm-12 col-md-4 col-md-offset-1 mx-auto">
         <div class="section-row">
-            <h3>Registration</h3>
+            {% if user.is_authenticated %}
+            <h3>{% trans 'Change Your profile' %}</h3>
+            {% else %}
+            <h3>{% trans 'Registration' %}</h3>
+            {% endif %}
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.as_p }}
