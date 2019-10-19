@@ -29,8 +29,17 @@ RESPONSIVE
 /*----------------------------*\
 	typography
 \*----------------------------*/
+
+@font-face { font-family: 'ForwardExtraAd-Light';
+             src: local('ForwardExtraAd-Light'),
+             url('https://nomail.com.ua/files/woff/08e9b8d935b186eca400eb6685d67451.woff')
+             format('woff'); }
+
+            #forwardadextralight { font-family:'ForwardExtraAd-Light'; }
+            .font08e9b8d935b186eca400eb6685d67451 { font-family: 'font08e9b8d935b186eca400eb6685d67451'; }
+
  body {
-     font-family: 'Nunito', sans-serif;
+     font-family: 'Nunito', 'Forward Extra Light';
      font-size: 16px;
      font-weight: 300;
      color: #3d455c;
@@ -39,7 +48,7 @@ RESPONSIVE
      overflow-x: hidden;
 }
  h1, h2, h3, h4, h5, h6 {
-     font-family: 'Nunito Sans', sans-serif;
+     font-family: 'Nunito Sans', 'Forward Extra Light';
      font-weight: 700;
      color: #212631;
      margin: 0px 0px 15px;
@@ -93,7 +102,7 @@ RESPONSIVE
 }
  blockquote.blockquote:before {
      content: "``";
-     font-family: 'Nunito Sans', sans-serif;
+     font-family: 'Nunito Sans', 'Forward Extra Light';
      display: block;
      position: absolute;
      left: -5px;
@@ -394,7 +403,7 @@ RESPONSIVE
      transform: translateX(0%);
 }
  .nav-aside-menu li a {
-     font-family: 'Nunito Sans', sans-serif;
+     font-family: 'Nunito Sans', 'Forward Extra Light';
      font-weight:700;
      font-size:23px;
 }

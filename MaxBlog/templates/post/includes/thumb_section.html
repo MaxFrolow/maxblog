@@ -7,7 +7,7 @@
 							<div class="post-body">
 								<div class="post-meta">
 									<a class="post-category {% category_attrs object.category %} " href="?filter_category={{ object.category }}">{{ object.category }}</a>
-									<span class="post-date">{{ object.create_datetime }}</span>
+									<span class="post-date">{{ object.created_datetime }}</span>
 								</div>
 								<h3 class="post-title"><a href="{% url 'mainpage:detail' object.id %}">{{ object.title|truncatechars:45 }}</a></h3>
 							</div>

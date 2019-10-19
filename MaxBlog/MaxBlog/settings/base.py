@@ -92,11 +92,11 @@ WSGI_APPLICATION = 'MaxBlog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'maxblog',
-        'USER': 'maxblog',
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', '1'),
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'test37'),
         'PORT': '5432',
-        #'HOST': 'db',
+        'HOST': 'db',
         'ATOMIC_REQUESTS': True
     }
 }

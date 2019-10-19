@@ -86,13 +86,8 @@
 										<div class="media-heading">
 											<h3>{{ object.author.first_name }} {{ object.author.last_name }}</h3>
 										</div>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-										<ul class="author-social">
-											<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-											<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-											<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-										</ul>
+										<p>{% trans 'Date added' %}: {{ object.author.date_added }}</p>
+
 									</div>
 								</div>
 							</div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-15 10:57+0000\n"
+"POT-Creation-Date: 2019-10-19 19:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgstr "Фамилия"
 
 #: accounts/forms.py:73
 msgid "Email"
-msgstr "Електронная почта"
+msgstr "Адрес електронной почты"
 
 #: accounts/forms.py:112
 msgid "Image"
@@ -54,7 +54,7 @@ msgstr "Изображение"
 
 #: accounts/managers.py:28
 msgid "Superuser must have is_staff=True"
-msgstr "Суперпользователь должен иметь is_staff=True"
+msgstr "Суперпольщователь должен иметь is_staff=True"
 
 #: accounts/managers.py:30
 msgid "Superuser must have is_superuser=True"
@@ -62,7 +62,7 @@ msgstr "Суперпользователь должен иметь is_superuser=
 
 #: accounts/models.py:9
 msgid "email address"
-msgstr "Адрес електронной почты"
+msgstr "Електронный адрес"
 
 #: accounts/models.py:10
 msgid "first name"
@@ -74,7 +74,7 @@ msgstr "Фамилия"
 
 #: accounts/models.py:12
 msgid "date added"
-msgstr "Дата добавлеия"
+msgstr "Дата добавления"
 
 #: accounts/models.py:13
 msgid "avatar"
@@ -104,13 +104,13 @@ msgstr "Вы успешно авторизировались"
 msgid "Updated"
 msgstr "Обновлено"
 
-#: accounts/views.py:50 mainpage/views.py:95 templates/post/blog-post.html:53
+#: accounts/views.py:50 mainpage/views.py:95 templates/post/blog-post.html:56
 msgid "Update"
 msgstr "Обновить"
 
 #: likes/models.py:12
 msgid "Object id"
-msgstr "ID объекта"
+msgstr "ID обьекта"
 
 #: likes/models.py:19
 msgid "Like"
@@ -122,11 +122,11 @@ msgstr "Лайки"
 
 #: mainpage/forms.py:22
 msgid "Title image"
-msgstr "Титулььное изображение"
+msgstr "Титульное изображение"
 
 #: mainpage/models.py:6
 msgid "Creating time"
-msgstr "Дата создания"
+msgstr "Время создания"
 
 #: mainpage/models.py:7
 msgid "Last changing time"
@@ -154,11 +154,11 @@ msgstr "Категория"
 
 #: mainpage/models.py:26
 msgid "News image"
-msgstr "Изображение новости"
+msgstr "Изоброжение к новости"
 
-#: mainpage/models.py:34 mainpage/models.py:35 templates/index.html:61
+#: mainpage/models.py:34 mainpage/models.py:35 templates/index.html:74
 msgid "News"
-msgstr "Новости"
+msgstr "Новость"
 
 #: mainpage/models.py:40
 msgid "Post comment"
@@ -166,7 +166,7 @@ msgstr "Коментарий к посту"
 
 #: mainpage/models.py:41
 msgid "comment_post"
-msgstr "Коментарий к посту"
+msgstr ""
 
 #: mainpage/models.py:48
 msgid "Comment"
@@ -180,15 +180,21 @@ msgstr "Коментарии"
 msgid "Create"
 msgstr "Создать"
 
+#: templates/accounts/login.html:40 templates/index.html:114
+msgid "Log In"
+msgstr "Войти"
+
 #: templates/accounts/login.html:44
 msgid "Sign In"
 msgstr "Войти"
 
+#: templates/accounts/login.html:47
+msgid "Don't have an account?"
+msgstr "Нет аккаунта?"
+
 #: templates/accounts/registration.html:43
-#, fuzzy
-#| msgid "Change Profile"
 msgid "Change Your profile"
-msgstr "Изменить профиль"
+msgstr "Изменить свой профиль"
 
 #: templates/accounts/registration.html:45
 msgid "Registration"
@@ -196,50 +202,53 @@ msgstr "Регистрацыя"
 
 #: templates/accounts/registration.html:54
 msgid "Sign up"
-msgstr "Зарегестрироваться"
+msgstr "Создать Профиль"
 
-#: templates/index.html:115
+#: templates/index.html:150
 msgid "Change Profile"
 msgstr "Изменить профиль"
 
-#: templates/index.html:116 templates/post/form.html:10
+#: templates/index.html:151 templates/post/form.html:10
 msgid "Create Post"
 msgstr "Создать пост"
 
-#: templates/index.html:117
+#: templates/index.html:152
 msgid "My Posts"
 msgstr "Мои посты"
 
-#: templates/index.html:118
+#: templates/index.html:153
 msgid "Logout"
-msgstr "Выйти"
+msgstr "Выход"
 
-#: templates/index.html:295
+#: templates/index.html:334
 msgid "Favorites"
-msgstr "Любимые"
+msgstr "Любимое"
 
-#: templates/index.html:312
-#, fuzzy
-#| msgid "Category"
+#: templates/index.html:349
 msgid "Categories"
-msgstr "Категория"
+msgstr "Категории"
 
-#: templates/index.html:329
+#: templates/index.html:370
 msgid "Newest"
-msgstr "Самые новые"
+msgstr "Самое новое"
 
-#: templates/post/blog-post.html:58
+#: templates/post/blog-post.html:61
 msgid "Delete"
 msgstr "Удалить"
 
-#: templates/post/blog-post.html:125 templates/post/blog-post.html:129
-#: templates/post/blog-post.html:139
+#: templates/post/blog-post.html:89
+
+msgid "Date added"
+msgstr "Дата добавления"
+
+#: templates/post/blog-post.html:123 templates/post/blog-post.html:127
+#: templates/post/blog-post.html:137
 msgid "Leave a Reply"
 msgstr "Оставить отзыв"
 
 #: templates/post/delete_form.html:8
 msgid "Are you shure, that you want to delete a post?"
-msgstr "Вы уверены, что хотите удалить пост?"
+msgstr "Вы увереныб что хотите удалить пост?"
 
 #: templates/post/delete_form.html:13
 msgid "Yes"
@@ -279,4 +288,4 @@ msgstr "Дале"
 
 #: templates/post/mainpage.html:42
 msgid "Last"
-msgstr "Последняя"
+msgstr "В конец"
