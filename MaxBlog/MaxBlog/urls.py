@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('mainpage.urls', namespace='mainpage')),
     path('', include('accounts.urls', namespace='accounts')),
     path('', include('likes.urls', namespace='likes')),
+    path('api/v1/', include('rest.urls', namespace='rest')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

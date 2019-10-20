@@ -40,11 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
+
+    'rest_framework',
     #my apps
     'MaxBlog.apps.MaxBlogConfig',
     'mainpage.apps.MainpageConfig',
     'accounts.apps.AccountsConfig',
     'likes.apps.LikesConfig',
+    'rest.apps.RestConfig',
 
 ]
 
