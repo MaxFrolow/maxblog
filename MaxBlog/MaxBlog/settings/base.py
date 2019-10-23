@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'po9f_yw*i+dpd2x(cnxk7l+8zwyjx6+=8e0*@ppdi*=*_)=!@8'
+SECRET_KEY = #
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'account',
+    'rest_framework_swagger',
 
     #my apps
     'MaxBlog.apps.MaxBlogConfig',
@@ -197,5 +198,20 @@ AUTH_USER_MODEL = 'accounts.User'
 
 ACCOUNT_EMAIL_UNIQUE = True
 ACCOUNT_EMAIL_CONFIRMATION_REQUIRED = True
+
+ACCOUNT_LOGIN_URL = 'MaxBlog:accounts_login'
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = ACCOUNT_LOGIN_URL
+ACCOUNT_PASSWORD_RESET_REDIRECT_URL = ACCOUNT_LOGIN_URL
+ACCOUNT_EMAIL_CONFIRMATION_URL = "MaxBlog:accounts_confirm_email"
+ACCOUNT_SETTINGS_REDIRECT_URL = 'MaxBlog:accounts_settings'
+ACCOUNT_PASSWORD_CHANGE_REDIRECT_URL = "MaxBlog:account_password"
+
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "myemail@gmail.com"
+EMAIL_HOST_PASSWORD = "password"
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 SITE_ID = 1

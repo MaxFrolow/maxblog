@@ -18,7 +18,10 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework import routers
+from rest_framework_swagger.views import get_swagger_view
+from django.conf.urls import url
 
+schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
@@ -28,7 +31,7 @@ urlpatterns = [
     path('', include('likes.urls', namespace='likes')),
     path('api/', include('rest.urls', namespace='rest')),
     path('api/v1/base-auth/', include('rest_framework.urls')),
-    path('account/', include('account.urls')),
+    url(r'^docs$', schema_view)
 
 
 

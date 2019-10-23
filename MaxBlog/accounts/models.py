@@ -12,7 +12,7 @@ class User(AbstractBaseUser ,PermissionsMixin):
     date_added = models.DateTimeField(_('date added'), auto_now_add=True)
     avatar = models.ImageField(_('avatar'), upload_to='avatars/', null=True, blank=True, default='static/index.png')
     is_staff = models.BooleanField(_('staff'), default=True)
-    is_active = models.BooleanField(_('active'), default=True)
+    is_active = models.BooleanField(_('active'), default=False)
 
     objects = UserManager()
 
