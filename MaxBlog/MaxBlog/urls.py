@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework import routers
+
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
@@ -24,7 +26,12 @@ urlpatterns = [
     path('', include('mainpage.urls', namespace='mainpage')),
     path('', include('accounts.urls', namespace='accounts')),
     path('', include('likes.urls', namespace='likes')),
-    path('api/v1/', include('rest.urls', namespace='rest')),
+    path('api/', include('rest.urls', namespace='rest')),
+    path('api/v1/base-auth/', include('rest_framework.urls')),
+    path('account/', include('account.urls')),
+
+
+
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
