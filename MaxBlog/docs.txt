@@ -1,0 +1,32 @@
+Documentation
+
+Instalation
+Local installation with docker:
+1 You need Docker and docker-compose
+2 In folder with Dockerfile and docker-compose.yml:
+    Windows(Not tested on Windows):
+        Run Docker
+        In terminal run "docker-compose up"
+        In browser open 0.0.0.0:8080
+
+    Linux:
+        In terminal:"sudo docker-compose up"
+        In browser open 0.0.0.0:8080
+3 Collect static and migrations:
+    run "docker exec -i -t (container id) bash" in new terminal but in the same folder
+    (to know container id run "docker ps" and copy container id in line with maxblog_web)
+    run "python3 manage.py makemigrations"
+    run "python3 manage.py migrate"
+    run "python3 manage.py collectstatic --noinput"
+
+
+Global:
+Install Postgres and all from req.txt
+In postgres create user and db, grant all privileges user on db
+On base.py change db settings
+Do migrations
+Collect static
+Run django server
+
+
+

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import DetailView, CreateView, DeleteView, UpdateView, ListView
+from django.views.generic import DetailView, CreateView, DeleteView, UpdateView, ListView,FormView
 from django.utils.translation import ugettext_lazy as _
 from django.template.loader import render_to_string
 from django_filters.views import FilterView
